@@ -1,6 +1,6 @@
 <html>
 	<head>
-		{% if title == "Home" %}
+		{% if title %}
 		<title>{{ title }} - microblog</title>
 		{% else %}
 		<title>Welcome to microblog</title>
@@ -9,4 +9,7 @@
 	<body>
 		<h1>Hello, {{ user.nickname }} !</h1>
 	</body>
+	{% for post in posts %}
+	<div><p>{{ post.author.nickname }} says: <b>{{ post.body }}</b></p></div>
+	{% endfor %}
 </html>
